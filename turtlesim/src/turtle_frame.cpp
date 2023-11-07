@@ -35,8 +35,8 @@
 #include <ctime>
 
 #define DEFAULT_BG_R 0xff
-#define DEFAULT_BG_G 0x00
-#define DEFAULT_BG_B 0x00
+#define DEFAULT_BG_G 0xff
+#define DEFAULT_BG_B 0xff
 
 namespace turtlesim
 {
@@ -49,7 +49,7 @@ TurtleFrame::TurtleFrame(rclcpp::Node::SharedPtr& node_handle, QWidget* parent, 
 , id_counter_(0)
 {
   setFixedSize(500, 500);
-  setWindowTitle("New turtle sim");
+  setWindowTitle("Elbflorace - Intro Task");
 
   srand(time(NULL));
 

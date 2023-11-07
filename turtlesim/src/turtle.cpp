@@ -260,15 +260,15 @@ bool Turtle::update(double dt, QPainter& path_painter, const QImage& path_image,
 
   // Change the background color
  
-  if (pos_.y() >= canvas_height) { //Top: red
-      nh_->set_parameter(rclcpp::Parameter("background_r", 255));
-      nh_->set_parameter(rclcpp::Parameter("background_g", 0));
-      nh_->set_parameter(rclcpp::Parameter("background_b", 0));
-  }
-  else if (pos_.y() <= 0) { //Bottom: orange
+  if (pos_.y() >= canvas_height) { //Bottom: orange
       nh_->set_parameter(rclcpp::Parameter("background_r", 255));
       nh_->set_parameter(rclcpp::Parameter("background_g", 200));
       nh_->set_parameter(rclcpp::Parameter("background_b", 5));
+  }
+  else if (pos_.y() <= 0) { //Top: red
+      nh_->set_parameter(rclcpp::Parameter("background_r", 255));
+      nh_->set_parameter(rclcpp::Parameter("background_g", 0));
+      nh_->set_parameter(rclcpp::Parameter("background_b", 0));
   }
   else if (pos_.x() <= 0) { //Left: blue
       nh_->set_parameter(rclcpp::Parameter("background_r", 0));
